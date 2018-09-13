@@ -29,7 +29,7 @@ class Enemy {
 
             }, 200);
             // Reduce the score when player collides with an Enemy
-            if (player.score > 0 && player.level > 1 || player.level === 12) {
+            if (player.score > 0 && player.level > 1 || player.level === 20) {
                 player.score -= 5;
                 player.level -= 1;
             };
@@ -59,8 +59,8 @@ class Player {
         document.querySelector('.level').innerHTML = "Level: " + this.level;
         document.querySelector('.score').innerHTML = "Score: " + this.score;
 
-        // Call modal when player gets to level 12
-        if (player.level === 12) {
+        // Call modal when player gets to level 20
+        if (player.level === 20) {
             document.querySelector('.modal').style.display = 'block';
             document.querySelector('.modal-score').innerHTML = `You made it to Level: ${player.level} with score ${player.score}`;
         }
