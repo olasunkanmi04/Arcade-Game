@@ -1,6 +1,28 @@
-frontend-nanodegree-arcade-game
-===============================
+# Frogger-Arcade-Game
+This is a classic arcade game where the player tries to cross the road to the river without been hit by numerious enemies(bugs) along the road.
+## Table of Contents
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+* [How to play](#instructions)
+* [Authors](#dependencies)
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## How to play
+
+The game is hosted [here](https://olasunkanmi04.github.io/Arcade-Game/) so you can play it.
+You can also fork this project and load the index.html file on you local machine and play it on your browser.
+
+To play the game, you navigate the player using the keyboard left, right, up or down arrow key.
+
+* There is a score reader which increments by 5 whenever the player crosses successfully to the river.
+* The highest level of the game is level 20 and on getting there you get a congratulator message.
+* When a player collides with a bug the level and score drops
+
+## Authors
+
+* **Alabi Olasunkanmi**
+-With initial template from Udacity
+
+## Acknowledgments
+
+* Udacity
+* Google
+* Andela Learning Community (ALC).
