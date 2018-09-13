@@ -3,7 +3,7 @@ This is a classic arcade game where the player tries to cross the road to the ri
 ## Table of Contents
 
 * [How to play](#instructions)
-* [Authors](#dependencies)
+* [Authors](#authors)
 
 ## How to play
 
@@ -13,7 +13,7 @@ You can also fork this project and load the index.html file on you local machine
 To play the game, you navigate the player using the keyboard left, right, up or down arrow key.
 
 * There is a score reader which increments by 5 whenever the player crosses successfully to the river.
-* The highest level of the game is level 20 and on getting there you get a congratulator message.
+* The highest level of the game is level 20 and on getting there you get a congratulatory message.
 * When a player collides with a bug the level and score drops
 
 ## Authors
