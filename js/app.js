@@ -1,14 +1,25 @@
+// A super class of all characters
+class Character {
+    constructor(x, y, sprite) {
+        this.x = x;
+        this.y = y;
+        this.sprite = sprite;
+    }
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
+    }
+}
 // Enemies our player must avoid
-class Enemy {
+class Enemy extends Character {
     constructor(x, y, speed) {
         // Variables applied to each of our instances go here,
         // we've provided one for you to get started
-        this.x = x;
-        this.y = y;
+        super(x, y, 'images/enemy-bug.png');
         this.speed = speed;
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/enemy-bug.png';
+
     }
     // Update the enemy's position, required method for game
     // Parameter: dt, a time delta between ticks
@@ -37,20 +48,15 @@ class Enemy {
 
     }
     // Draw the enemy on the screen, required method for game
-    render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
-    }
 
 }
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-class Player {
+class Player extends Character {
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.sprite = 'images/char-horn-girl.png';
+        super(x, y, 'images/char-horn-girl.png');
         this.score = 0;
         this.level = 1;
     }
@@ -60,25 +66,23 @@ class Player {
         document.querySelector('.score').innerHTML = "Score: " + this.score;
 
         // Call modal when player gets to level 20
-        if (player.level === 20) {
+        if (this.level === 20) {
             document.querySelector('.modal').style.display = 'block';
-            document.querySelector('.modal-score').innerHTML = `You made it to Level: ${player.level} with score ${player.score}`;
+            document.querySelector('.modal-score').innerHTML = `You made it to Level: ${this.level} with score ${this.score}`;
         }
         // Close modal and reset score and level
+        let gameOver = this;
         document.querySelector('.modal-close').addEventListener('click', function () {
-            player.level = 1;
-            player.score = 0;
+            gameOver.level = 1;
+            gameOver.score = 0;
             document.querySelector('.modal').style.display = "none";
         });
         document.querySelector('.modal-play-again').addEventListener('click', function () {
-            player.level = 1;
-            player.score = 0;
+            gameOver.level = 1;
+            gameOver.score = 0;
             document.querySelector('.modal').style.display = "none";
         });
 
-    }
-    render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     // Returns player to starting position
     restart() {
@@ -87,8 +91,8 @@ class Player {
     }
     // Handles players movement and prevents player from going outside the canvas
     levels() {
-        if (player.score = 10) {
-            player.level += 1;
+        if (this.score = 10) {
+            this.level += 1;
 
         }
     }
